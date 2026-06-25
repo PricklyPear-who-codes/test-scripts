@@ -1,3 +1,3 @@
 const CONFIG = {
-    GITHUB_TOKEN: "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"
+    GITHUB_TOKEN: "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"
 };

@@ -1,0 +1,213 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body spacing */
+body {
+    font-family: sans-serif;
+}
+
+/* --- Notification Bar Styles --- */
+
+/* Hide the toggle checkbox completely */
+.notice-toggle {
+    display: none;
+}
+
+/* The pretty pink/purple notification bar */
+.notification-bar {
+    background-color: #ffb7ce; /* Pretty pink */
+    color: #4a154b; /* Darker purple text */
+    text-align: center;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Sits above the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* White "X" close button */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    color: #ffffff; /* White X */
+    font-size: 22px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+    opacity: 0.8;
+}
+
+/* THE MAGIC: When checkbox is checked, hide notification bar */
+.notice-toggle:checked ~ .notification-bar {
+    display: none;
+}
+
+/* THE MAGIC PART 2: Adjust navbar position when notification is closed */
+.notice-toggle:checked ~ nav {
+    top: 0px;
+}
+
+
+/* --- Navigation Bar Styles --- */
+
+nav {
+    background-color: #000000; /* Black background */
+    width: 100%;
+    position: fixed; 
+    top: 0px; /* Modified to default to 0px instead of 40px */
+    left: 0;
+    z-index: 1000; 
+    transition: top 0.2s ease; /* Smooth transition when notification closes */
+}
+
+#titleCard {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Remove bullet points and align items to the right side using Flexbox */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 0 20px;
+}
+
+/* Style the individual list items */
+nav li {
+    display: inline-block;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+    display: block;
+    color: #ffffff; /* White text */
+    text-decoration: none; 
+    padding: 15px 20px; 
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}
+
+/* Add a subtle hover effect so users know they are interactive */
+nav a:hover {
+    background-color: #333333; /* Dark grey background on hover */
+}
+
+/* --- Admin Page Styles --- */
+
+/* Targets the body only on the admin page so it doesn't break index.html */
+.admin-body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* The boxed container */
+.admin-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Stack label and input vertically */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.input-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+.token-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    font-family: monospace; /* Makes the placeholder look like code */
+}
+
+/* --- Admin Buttons Layout --- */
+
+/* Container to put buttons side-by-side with a gap */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Base button styles */
+.btn {
+    flex: 1; /* Makes both buttons take up equal width */
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Removes underline from the "Back" link */
+    font-family: sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+/* Primary "Push to GitHub" Button (Black/Dark) */
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+/* Secondary "Back to Home" Button (Light/Grey Outline) */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #555555;
+    border: 1px solid #cccccc;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+/* Red Danger Button for turning things off */
+.btn-danger {
+    background-color: #d9534f;
+    color: #ffffff;
+    border: 1px solid #d9534f;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-box">
+        <div class="input-group">
+            <label class="input-label" for="token">Personal Access Token</label>
+            <input class="token-input" type="text" id="token" placeholder="ghp_...">
+        </div>
+
+        <div class="button-group" style="flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 15px; width: 100%;">
+                <button class="btn btn-primary" id="activateBtn">Turn Sale ON</button>
+                <button class="btn btn-danger" id="deactivateBtn">Turn Sale OFF</button>
+            </div>
+            <a href="index.html" class="btn btn-secondary" style="width: 100%; margin-top: 5px;">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

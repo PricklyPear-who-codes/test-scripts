@@ -52,12 +52,12 @@ body {
     opacity: 0.8;
 }
 
-/* THE MAGIC: When checkbox is checked, hide notification bar */
+/* When checkbox is checked, hide notification bar */
 .notice-toggle:checked ~ .notification-bar {
     display: none;
 }
 
-/* THE MAGIC PART 2: Adjust navbar position when notification is closed */
+/* Adjust navbar position when notification is closed manually */
 .notice-toggle:checked ~ nav {
     top: 0px;
 }
@@ -69,7 +69,7 @@ nav {
     background-color: #000000; /* Black background */
     width: 100%;
     position: fixed; 
-    top: 0px; /* Modified to default to 0px instead of 40px */
+    top: 0px; /* Defaults to the very top unless overridden by active JS sale rules */
     left: 0;
     z-index: 1000; 
     transition: top 0.2s ease; /* Smooth transition when notification closes */
@@ -151,7 +151,7 @@ nav a:hover {
     font-size: 16px;
     border: 1px solid #999999;
     border-radius: 4px;
-    font-family: monospace; /* Makes the placeholder look like code */
+    font-family: monospace;
 }
 
 /* --- Admin Buttons Layout --- */
@@ -173,12 +173,12 @@ nav a:hover {
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none; /* Removes underline from the "Back" link */
+    text-decoration: none; /* Removes underline from links */
     font-family: sans-serif;
     transition: background-color 0.2s ease;
 }
 
-/* Primary "Push to GitHub" Button (Black/Dark) */
+/* Primary "Turn Sale ON" Button (Black/Dark) */
 .btn-primary {
     background-color: #000000;
     color: #ffffff;

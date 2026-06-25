@@ -1,16 +1,23 @@
-// Change these three variables to match your personal GitHub setup:
+// CHANGE THESE TWO VARIABLES TO MATCH YOUR PERSONAL GITHUB SETUP:
 const GITHUB_USERNAME = "YOUR_GITHUB_USERNAME";
 const REPO_NAME = "YOUR_REPOSITORY_NAME";
-const FILE_PATH = "sale-status.json"; // Path to your json file in the repo
+const FILE_PATH = "sale-status.json"; 
 
 // Helper function to handle the API push logic dynamically
 async function updateSaleStatus(shouldActivate) {
-    const token = document.getElementById('token').value.trim();
+    // Check if token exists in your config.js first, otherwise fall back to the text input box
+    let token = "";
+    if (typeof CONFIG !== 'undefined' && CONFIG.GITHUB_TOKEN) {
+        token = CONFIG.GITHUB_TOKEN.trim();
+    } else {
+        token = document.getElementById('token').value.trim();
+    }
+
     const activateBtn = document.getElementById('activateBtn');
     const deactivateBtn = document.getElementById('deactivateBtn');
 
-    if (!token) {
-        alert("Please enter your Personal Access Token first!");
+    if (!token || token === "" || token.startsWith("YOUR_")) {
+        alert("Please enter a valid Personal Access Token in config.js or the input field!");
         return;
     }
 
